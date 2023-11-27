@@ -2,7 +2,7 @@ function towerBuilder(nFloors) {
   const tower = [];
   
   for (let i = 0; i < nFloors; i++) {
-    let floor = new String();
+    let floor = "";
     for (let j = 0; j < nFloors - i - 1; j++) floor += " ";
 
     for (let k = 0; k < 2 * i + 1; k++) floor += "*";
