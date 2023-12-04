@@ -1,4 +1,4 @@
-function repeatingLetter(sentence = "") {
+function repeatingLetter(sentence) {
   const letters = {};
 
   sentence = sentence.toLowerCase().replace(" ", "");
