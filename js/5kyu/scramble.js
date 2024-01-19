@@ -25,5 +25,3 @@ function scramble(str1, str2) {
 }
 
 console.log(scramble("katas", "steak"));
-
-
