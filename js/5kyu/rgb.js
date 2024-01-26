@@ -1,7 +1,7 @@
 function rgb(r, g, b) {
   let hex = "#";
 
-  for (let color of arguments) {
+  for (let color of [r, g, b]) {
     let quo, rest;
 
     if (color < 0) {
@@ -11,8 +11,12 @@ function rgb(r, g, b) {
       quo = "F";
       rest = "F";
     } else {
-      quo = Math.floor(color / 16).toString(16).toUpperCase();
-      rest = Math.floor(color % 16).toString(16).toUpperCase();
+      quo = Math.floor(color / 16)
+        .toString(16)
+        .toUpperCase();
+      rest = Math.floor(color % 16)
+        .toString(16)
+        .toUpperCase();
     }
 
     hex += quo + rest;
@@ -20,3 +24,5 @@ function rgb(r, g, b) {
 
   return hex;
 }
+
+console.log(rgb(237, 69, 55));
