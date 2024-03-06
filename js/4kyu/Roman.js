@@ -36,21 +36,14 @@ class RomanNumerals {
   static fromRoman(str) {
     let num = 0;
 
-    for (let i = 0; i < str.length - 1; i++) {
-      const value = this.numerals[str[i]];
+    for (let i = 0; i < str.length; i++) {
+      const curr = this.numerals[str[i]];
       const next = this.numerals[str[i + 1]];
 
-      if (value < next) {
-        num += this.numerals[this.toRoman(next - value)];
+      if (next && curr < next) {
+        num += next - curr;
         i++;
-      } else num += value;
-    }
-
-    const lastDigit = this.numerals[str[str.length - 1]];
-    const penulDigit = this.numerals[str[str.length - 2]];
-
-    if (!penulDigit || lastDigit <= penulDigit) {
-      num += this.numerals[str[str.length - 1]];
+      } else num += curr;
     }
 
     return num;
